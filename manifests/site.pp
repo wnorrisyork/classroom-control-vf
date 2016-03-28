@@ -42,12 +42,19 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "Hello, my name is ${::hostname}": }
   file { '/etc/motd':
-  ensure  => file,
-  owner   => 'root',
-  group   => 'root',
-  mode    => '0644',
-  content => "Hey, Look what I did!\n",
-}
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => "Hey, Look what I did!\n",
+  }
+  host { 'host':
+    ensure => 'present',
+    ip => '127.0.0.1',
+    name => 'testing.puppetlabs.vm',
+    comment => 'Host for Puppetlabs homework',
+    target => '/etc/hosts',
+  }
+  notify { "Hello, my name is ${::hostname}": }
 }
