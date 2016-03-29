@@ -49,12 +49,9 @@ node default {
     mode    => '0644',
     content => "Hey, Look what I did!\n",
   }
-  host { 'host':
-    ensure => 'present',
+  host { 'testing.puppetlabs.vm':
+    ensure => present,
     ip => '127.0.0.1',
-    name => 'testing.puppetlabs.vm',
-    comment => 'Host for Puppetlabs homework',
-    target => '/etc/hosts',
   }
   notify { "Hello, my name is ${::hostname}": }
 }
