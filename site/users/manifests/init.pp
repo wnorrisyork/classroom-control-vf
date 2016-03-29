@@ -1,0 +1,3 @@
+user {'wnorrisyork':
+  exists => present,
+}
