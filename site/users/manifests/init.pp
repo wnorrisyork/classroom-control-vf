@@ -1,3 +1,7 @@
-user {'wnorrisyork':
-  exists => present,
+class users {
+
+  user {'fundamentals':
+    ensure => present,
+  }
+  
 }
