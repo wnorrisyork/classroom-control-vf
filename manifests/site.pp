@@ -57,5 +57,9 @@ node default {
   include skeleton
   include memcached
   include nginx
-  notify { "Hello, my name is ${::hostname}": }
+  if $::virtual !='Physical'{
+    $vmname = capitalize($::virtual)
+    notify{"My system is a ${vmname} virtual system":}
+  }
+  #notify { "Hello, my name is ${::hostname}": }
 }
