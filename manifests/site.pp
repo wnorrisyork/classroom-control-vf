@@ -57,6 +57,7 @@ node default {
   include skeleton
   include memcached
   include nginx
+  include aliases
   if $::virtual !='Physical'{
     $vmname = capitalize($::virtual)
     notify{"My system is a ${vmname} virtual system":}
