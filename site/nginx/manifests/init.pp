@@ -4,7 +4,8 @@ File {
   group => 'root',
   mode => '0664',
 }
-$modules = 'puppet:///modules/nginx/',
+
+$modules = 'puppet:///modules/nginx/'
 
   package { 'nginx':
     ensure => present,
