@@ -23,7 +23,7 @@ define users::managed_user (
     name => $groupname,
   }
   ## manage ${home}/.ssh directory
-  file {[$homedir, ${home}/.ssh"]:
+  file {[$homedir, "${homedir}/.ssh"]:
     ensure => directory,
   }
 }
