@@ -20,7 +20,7 @@ define users::managed_user (
   ## group account
   group {$title:
     ensure => present,
-    name = $groupname,
+    name => $groupname,
   }
   ## manage ${home}/.ssh directory
   file {[$homedir, ${home}/.ssh"]:
