@@ -37,7 +37,7 @@ class nginx {
   package { $package:
     ensure => present,
   }
-  file { [ $docroot, "$serverblockdir ]:
+  file { [ $docroot, $serverblockdir ]:
     ensure => directory,
   }
   file { "${docroot}/index.html":
