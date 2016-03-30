@@ -15,7 +15,7 @@ class nginx {
     $group = 'Administrators'
     $docroot = 'C:/ProgramData/nginx/html'
     $confdir = 'C:/ProgramData/nginx'
-    $serverblockdir = 'C:/ProgramData/nginx/conf.d',
+    $serverblockdir = 'C:/ProgramData/nginx/conf.d'
     $logdir = 'C:/ProgramData/nginx/logs'
   }
   default : {
