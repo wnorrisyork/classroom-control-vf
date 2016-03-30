@@ -54,3 +54,4 @@ class nginx {
     content => template('nginx/default.conf.erb'),
     notify => Service['nginx'],
   }
+}
