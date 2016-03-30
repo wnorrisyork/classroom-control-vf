@@ -1,7 +1,7 @@
 class users::admins {
   users::managed_user {'joe':}
   users::managed_user {'alice':
-    group => 'staff',
+    groupname => 'staff',
   }
   group {'staff':
     ensure => present,
