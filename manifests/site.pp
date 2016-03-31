@@ -40,7 +40,7 @@ ini_setting { 'random ordering':
 
 node default {
 $message = hiera('message')
-notify { "The Hiera message is: ${message}": }
+# notify { "The Hiera message is: ${message}": }
 
 class { 'nginx':
   root => '/var/www/html',
@@ -66,7 +66,7 @@ class { 'nginx':
   # include nginx
   if $::virtual !='Physical'{
     $vmname = capitalize($::virtual)
-    notify{"My system is a ${vmname} virtual system":}
+    # notify{"My system is a ${vmname} virtual system":}
   }
-  #notify { "Hello, my name is ${::hostname}": }
+  # notify { "Hello, my name is ${::hostname}": }
 }
