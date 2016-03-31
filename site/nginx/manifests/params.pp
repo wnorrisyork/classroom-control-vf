@@ -24,7 +24,5 @@ class nginx::params {
     'redhat' => 'nginx',
     'debian' => 'www-data',
     'windows' => 'nobody',
-    Lab 18.2: Proposed Solution
-    VirtualFundamentals v1.0.2 31 ©2016 Puppet Labs
   }
 }
