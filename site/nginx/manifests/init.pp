@@ -34,8 +34,9 @@ class nginx {
     group => $group,
     mode => '0664',
   }
-  package { $package:
-    ensure => present,
+  package { 'nginx':
+    ensure => installed,
+    name => $package,
   }
   file { [ $docroot, $serverblockdir ]:
     ensure => directory,
