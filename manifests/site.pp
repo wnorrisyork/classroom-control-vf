@@ -42,6 +42,10 @@ node default {
 $message = hiera('message')
 notify { "The Hiera message is: ${message}": }
 
+class { 'nginx':
+  root => '/var/www/html',
+}
+
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
