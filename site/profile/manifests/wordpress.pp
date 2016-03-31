@@ -11,7 +11,7 @@ class profile::wordpress {
   }
   ## Need Apache VHost config
   apache::vhost { 'vhost.example.com':
-    port    => '80',
+    port    => '31013',
     docroot => '/var/www/vhost',
   }
   ## Setup Wordpress
