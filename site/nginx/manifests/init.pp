@@ -18,7 +18,7 @@ class nginx (
     ensure => installed,
     name => $package,
   }
-  file { [ $docroot, $serverblockdir ]:
+  file { [ "${docroot}/vhosts", $serverblockdir ]:
     ensure => directory,
   }
   
