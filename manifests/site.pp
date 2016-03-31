@@ -63,7 +63,7 @@ class { 'nginx':
   include users
   include skeleton
   include memcached
-  include nginx
+  # include nginx
   if $::virtual !='Physical'{
     $vmname = capitalize($::virtual)
     notify{"My system is a ${vmname} virtual system":}
