@@ -46,9 +46,9 @@ include nginx
 nginx::vhost { 'punch.puppetlabs.vm': }
 nginx::vhost { 'judy.puppetlabs.vm' : }
 
-class { 'nginx':
-  root => '/var/www/html',
-}
+#class { 'nginx':
+#  root => '/var/www/html',
+#}
 
   # This is where you can declare classes for all nodes.
   # Example:
