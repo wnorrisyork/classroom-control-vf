@@ -42,6 +42,10 @@ node default {
 $message = hiera('message')
 # notify { "The Hiera message is: ${message}": }
 
+include nginx
+nginx::vhost { 'punch.puppetlabs.vm': }
+nginx::vhost { 'judy.puppetlabs.vm' : }
+
 class { 'nginx':
   root => '/var/www/html',
 }
@@ -63,7 +67,6 @@ class { 'nginx':
   include users
   include skeleton
   include memcached
-  # include nginx
   if $::virtual !='Physical'{
     $vmname = capitalize($::virtual)
     # notify{"My system is a ${vmname} virtual system":}
