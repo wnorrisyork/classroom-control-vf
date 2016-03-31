@@ -7,6 +7,7 @@ class nginx::params {
       $docroot = '/var/www'
       $confdir = '/etc/nginx'
       $logdir = '/var/log/nginx'
+      $root = '/var/www'
     }
     'windows' : {
       $package = 'nginx-service'
@@ -15,6 +16,7 @@ class nginx::params {
       $docroot = 'C:/ProgramData/nginx/html'
       $confdir = 'C:/ProgramData/nginx'
       $logdir = 'C:/ProgramData/nginx/logs'
+      $root = '/var/www'
     }
     default : {
       fail("Module ${module_name} is not supported on ${::osfamily}")
