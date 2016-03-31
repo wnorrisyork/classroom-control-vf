@@ -21,20 +21,27 @@ class nginx (
   file { [ $docroot, $serverblockdir ]:
     ensure => directory,
   }
-  file { "${docroot}/index.html":
-    ensure => file,
-    source => 'puppet:///modules/nginx/index.html',
+  
+  # manage the default docroot, index, and conf--replaces several resources
+  nginx::vhost { 'default':
+    docroot => $docroot,
+    servername => $::fqdn,
   }
+
+#  file { "${docroot}/index.html":
+#    ensure => file,
+#    source => 'puppet:///modules/nginx/index.html',
+#  }
   file { "${confdir}/nginx.conf":
     ensure => file,
     content => template('nginx/nginx.conf.erb'),
     notify => Service['nginx'],
   }
-  file { "${serverblockdir}/default.conf":
-    ensure => file,
-    content => template('nginx/default.conf.erb'),
-    notify => Service['nginx'],
-  }
+#  file { "${serverblockdir}/default.conf":
+#    ensure => file,
+#    content => template('nginx/default.conf.erb'),
+#    notify => Service['nginx'],
+#  }
   service { 'nginx':
     ensure => running,
     enable => true,
